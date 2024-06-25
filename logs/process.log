@@ -40646,3 +40646,7 @@ round-trip min/avg/max/stddev = 17.600/17.600/17.600/0.000 ms
 2024-06-24 23:06:16,181 - 2024-06-24 21:39:32.587097 - DEBUG - Ping numder 521 returned 0 status_code.
 2024-06-24 23:06:19,812 - 2024-06-24 21:39:32.587097 - INFO - Successful request was made after 521 attempts
 2024-06-24 23:06:19,812 - 2024-06-24 21:39:32.587097 - INFO - The whole program took 5207.149973331019 seconds to run
+2024-06-25 03:15:28,407 - 2024-06-25 03:15:27.841919 - DEBUG - Request numder 1 took 10.565194522001548 time to get
+2024-06-25 03:15:28,407 - 2024-06-25 03:15:27.841919 - INFO - Process started. Request numder 1 returned 200 status_code.
+2024-06-25 03:15:31,835 - 2024-06-25 03:15:27.841919 - INFO - Successful request was made after 1 attempts
+2024-06-25 03:15:31,836 - 2024-06-25 03:15:27.841919 - INFO - The whole program took 3.9942381599976216 seconds to run

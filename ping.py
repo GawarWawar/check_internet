@@ -12,16 +12,18 @@ from utils import check_methods
 def main():
     start_timer = time.perf_counter()
     
+    SITE_TO_PING = "google.com"
+    
     if len(sys.argv) != 2:
         print("Usage: python ping.py ping_or_request")
         return 1
     elif sys.argv[1] == "ping":
-        server= "google.com"
+        server= SITE_TO_PING
         request_process = check_methods.ping_after_some_time
         message_starter = "Ping"
         
     elif sys.argv[1] == "request":
-        server= "https://google.com"
+        server= "https://"+SITE_TO_PING
         request_process = check_methods.make_request_after_some_time
         message_starter = "Request"
 
