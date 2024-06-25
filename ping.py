@@ -18,7 +18,7 @@ def main():
     sound_to_play = "sounds/Gall_-_Embrace_the_Shadow.oga"
     is_help_flag = False
     log_level = logging.DEBUG
-    log_file = 'logs/process.log'
+    log_file = 'process.log'
     
     USAGE_STRING = "Usage: python ping.py ping_or_request [flag] [flag_value]"
     # TODO: write full description of flags
@@ -34,7 +34,7 @@ def main():
     # Additionaly: create tests
     argc = len(sys.argv)
     
-    for flag_position, flag in enumerate(sys.argv, 2):
+    for flag_position, flag in enumerate(sys.argv):
         next_position = flag_position + 1
         
         if tools.check_flag_to_keys(flag, ["-h", "--help"]):
@@ -42,7 +42,7 @@ def main():
                 
         if tools.check_flag_to_keys(flag, ["-v", "--volume"]):
             if tools.check_next_flag_bounds(argc, next_position):
-                volume_level = sys.argv[next_position]
+                volume_level = int(sys.argv[next_position])
                 
         if tools.check_flag_to_keys(flag, ["-s", "--sound"]):
             if tools.check_next_flag_bounds(argc, next_position):
@@ -61,10 +61,10 @@ def main():
     
     # FileHandler
     try:
-        file_handler = logging.FileHandler(Path(__file__).parent.joinpath(log_file))
+        file_handler = logging.FileHandler(Path(__file__).parent.joinpath("logs/"+log_file))
     except FileNotFoundError:
         os.mkdir("logs")
-        file_handler = logging.FileHandler(Path(__file__).parent.joinpath(log_file))
+        file_handler = logging.FileHandler(Path(__file__).parent.joinpath("logs/"+log_file))
         
     file_handler.setFormatter(
         logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')

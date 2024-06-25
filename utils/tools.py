@@ -1,5 +1,5 @@
 def check_next_flag_bounds(len_of_array, next_flag):
-    if next_flag < len_of_array - 1:
+    if next_flag < len_of_array:
         return True
     return False
 
