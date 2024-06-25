@@ -67,12 +67,12 @@ def main():
     )
 
     
-    p = vlc.MediaPlayer(Path(__file__).parent.joinpath("sounds/Gall_-_Embrace_the_Shadow.oga"))
-    p.play()
+    sounds_player : vlc.MediaPlayer = vlc.MediaPlayer(Path(__file__).parent.joinpath("sounds/Gall_-_Embrace_the_Shadow.oga"))
+    sounds_player.play()
 
-    while p.is_playing() == 0:
+    while sounds_player.is_playing() == 0:
         ...
-    while p.is_playing() == 1:
+    while sounds_player.is_playing() == 1:
         ...
         
     logger.info(f"Successful request was made after {request_count} attempts")
