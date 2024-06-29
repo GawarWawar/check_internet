@@ -69,11 +69,12 @@ def main():
     logger.setLevel(log_level)
     
     # Create and setup FileHandler
+    log_file = Path(__file__).parent.joinpath("logs/"+log_file)
     try:
-        file_handler = logging.FileHandler(Path(__file__).parent.joinpath("logs/"+log_file))
+        file_handler = logging.FileHandler(log_file)
     except FileNotFoundError:
         os.mkdir("logs")
-        file_handler = logging.FileHandler(Path(__file__).parent.joinpath("logs/"+log_file))
+        file_handler = logging.FileHandler(log_file)
         
     file_handler.setFormatter(
         logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
