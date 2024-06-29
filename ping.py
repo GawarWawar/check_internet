@@ -128,17 +128,7 @@ def main():
     )
 
     # Play sound
-    if volume_level == 0:
-        sounds_player : vlc.MediaPlayer = vlc.MediaPlayer(
-            Path(__file__).parent.joinpath(sound_to_play)
-        )
-        sounds_player.audio_set_volume(volume_level)
-        sounds_player.play()
-
-        while sounds_player.is_playing() == 0:
-            ...
-        while sounds_player.is_playing() == 1:
-            ...
+    tools.play_sound(sound_to_play, volume_level)
             
     logger.info(f"Successful request was made after {request_count} attempts")
     logger.info(f"The whole program took {time.perf_counter() - start_timer} seconds to run")
