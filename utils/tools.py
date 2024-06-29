@@ -15,10 +15,10 @@ def check_flag_to_keys(
             return True
     return False
 
-def play_sound(sound, volume_level) -> None:
-    if volume_level == 0:
+def play_sound(sound, volume_level = 100) -> None:
+    if volume_level != 0:
         sounds_player : vlc.MediaPlayer = vlc.MediaPlayer(
-            Path(__file__).parent.joinpath(sound)
+            sound
         )
         sounds_player.audio_set_volume(volume_level)
         sounds_player.play()

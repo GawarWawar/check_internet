@@ -128,7 +128,10 @@ def main():
     )
 
     # Play sound
-    tools.play_sound(sound_to_play, volume_level)
+    tools.play_sound(
+        Path(__file__).parent.joinpath(sound_to_play), 
+        volume_level
+    )
             
     logger.info(f"Successful request was made after {request_count} attempts")
     logger.info(f"The whole program took {time.perf_counter() - start_timer} seconds to run")
